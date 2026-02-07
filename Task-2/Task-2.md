@@ -1,114 +1,35 @@
-# Task 2 – Dockerized Flask Application on AWS EC2
+# Task 3 – AWS EC2 Deployment with Docker
 
-## Overview
-This document contains **both explanations and screenshots** for Task 2.  
-It demonstrates creating Docker files, running the application in Docker containers, exposing ports, and ensuring containers auto-start on reboot.
-
----
-
-## Objectives Covered
-- Create Dockerfile
-- Build Docker image
-- Run app using Docker containers
-- Expose required ports
-- Ensure containers auto-start on reboot
+## Task Overview
+This document contains **both explanation and screenshots** for **Task 3: AWS EC2 Deployment**.  
+The objective of this task is to launch a cost-optimized EC2 instance, install Docker on it, and run Docker containers successfully.
 
 ---
 
-## Tech Stack
-- AWS EC2 (Amazon Linux 2023)
-- Docker
-- Python (Flask)
+## Task Requirements
+- Launch EC2 instance (t2.micro)
+- Install Docker on EC2
+- Run Docker containers on EC2
 
 ---
 
-## Project Structure
-```
-docker-demo/
-├── app.py
-├── requirements.txt
-└── Dockerfile
-```
+## AWS Region & Instance Details
+- **Region:** Asia Pacific (Mumbai) – ap-south-1  
+- **Instance Type:** t2.micro (cost optimized)  
+- **OS:** Amazon Linux 2023  
 
 ---
 
-## Step 1: EC2 Instance Setup
-An EC2 instance was launched in the Mumbai region and accessed via SSH.
+## Step 1: Launch EC2 Instance
+An EC2 instance was launched from the AWS Management Console using Amazon Linux 2023 AMI and t2.micro instance type.
 
-![EC2 Instances](t1.png)
+![EC2 Instances Running](./Task-3/t6.png)
 
 ---
 
-## Step 2: Docker Installation
-System packages were updated and Docker was installed and verified.
+## Step 2: Connect to EC2 & Update System
+The instance was accessed using SSH, and system packages were updated.
 
 ```bash
+ssh -i Vishal.pem ec2-user@<Public-IP>
 sudo yum update -y
-sudo yum install docker -y
-docker --version
-```
-
-![Docker Installation](t2.png)
-
----
-
-## Step 3: Docker Image Creation
-A Dockerfile was created and the Flask application image was built successfully.
-
-```bash
-docker build -t flask-demo-app .
-```
-
-![Docker Build](t3.png)
-
----
-
-## Step 4: Running Docker Container
-The Docker container was started with port mapping and auto-restart enabled.
-
-```bash
-docker run -d \
---name flask-container \
--p 80:5000 \
---restart unless-stopped \
-flask-demo-app
-```
-
-Container status verification:
-
-```bash
-docker ps
-```
-
-![Running Container](t4.png)
-
----
-
-## Step 5: Application Verification
-The Flask application was accessed using the EC2 public IP from a browser.
-
-```
-http://<EC2-Public-IP>
-```
-
-![Application Output](t5.png)
-
----
-
-## Auto-Start on Reboot
-The container uses:
-```
---restart unless-stopped
-```
-This ensures the container starts automatically after a system reboot.
-
----
-
-## Conclusion
-The Flask application was successfully dockerized, deployed on AWS EC2, exposed via browser, and configured to auto-start on reboot.
-
-## Task 2 completed successfully.
-
----
-
-**Author:** Vishal Chavan
