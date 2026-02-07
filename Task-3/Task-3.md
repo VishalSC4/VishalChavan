@@ -1,8 +1,9 @@
-# Docker Task – EC2 Flask Application Deployment
+# AWS EC2 Deployment 🚀
 
 ## 📌 Task Overview
 
-This task demonstrates how to containerize an application using **Docker**, run it inside Docker containers on an **AWS EC2 instance**, expose required ports, and ensure the container **auto-starts on system reboot**.
+This task demonstrates deploying a **Flask application** on an **AWS EC2 instance** using **Docker**.  
+It covers launching EC2, installing Docker, running containers, exposing ports, and verifying application output.
 
 ---
 
@@ -10,11 +11,12 @@ This task demonstrates how to containerize an application using **Docker**, run 
 
 The following objectives were completed:
 
-- Create Dockerfile(s)
+- Launch EC2 instance (cost-optimized: t2.micro / t3.micro)
+- Install Docker on EC2
 - Build Docker image
-- Run application using Docker containers
+- Run application inside Docker container
 - Expose required ports
-- Ensure Docker containers auto-start on reboot
+- Ensure container auto-starts on reboot
 
 ---
 
@@ -32,18 +34,18 @@ The following objectives were completed:
 
 ## 📷 Screenshots Reference
 
-| Image | Description |
-|------|------------|
-| `t6.png` | AWS EC2 Instances running state |
+| Image   | Description |
+|---------|-------------|
+| `t6.png` | AWS EC2 Instances dashboard showing running/stopped states |
 | `t7.png` | EC2 terminal setup & Docker installation |
-| `t8.png` | Docker image build process |
-| `t9.png` | Running Docker container |
+| `t8.png` | Docker image build process for Flask app |
+| `t9.png` | Running Docker container & Flask app output in browser |
 
 ---
 
 ## 📸 Screenshots
 
-### EC2 Instances Overview
+### EC2 Instances Dashboard
 ![EC2 Instances](t6.png)
 
 ### Docker Installation on EC2
@@ -52,14 +54,14 @@ The following objectives were completed:
 ### Docker Image Build
 ![Docker Build](t8.png)
 
-### Docker Container Running
+### Docker Container Running & Flask Output
 ![Docker Run](t9.png)
 
 ---
 
 ## 📦 Dockerfile
 
-The Dockerfile was created to containerize a Flask application:
+The Dockerfile used to containerize the Flask application:
 
 ```dockerfile
 FROM python:3.9-slim
