@@ -22,18 +22,18 @@ The objective of this task is to containerize a Flask application using Docker, 
 ---
 
 ## EC2 Instance Setup
-- Launched an EC2 instance in the **Asia Pacific (Mumbai)** region
-- Connected to the instance using SSH
-- Updated system packages
-- Installed Docker on Amazon Linux 2023
+An EC2 instance was launched in the **Asia Pacific (Mumbai)** region. The instance was accessed using SSH and prepared for Docker deployment.
 
-**Screenshot:** `t6.png`  
-**Description:** AWS EC2 dashboard showing running and stopped instances used for this task.
+### EC2 Instances Overview
+![EC2 Instances Overview](t6.png)
+
+**Image Info:**  
+`t6.png` shows the AWS EC2 dashboard with running and stopped instances used during this task.
 
 ---
 
 ## Docker Installation
-Docker was installed and verified on the EC2 instance using the following commands:
+Docker was installed and enabled on the EC2 instance using Amazon Linux 2023 package manager.
 
 ```bash
 sudo yum update -y
