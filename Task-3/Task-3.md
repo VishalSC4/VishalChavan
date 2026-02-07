@@ -1,42 +1,76 @@
-# Task-3: Docker Implementation on AWS EC2
+# Docker Task – EC2 Flask Application Deployment
 
-## Objective
-The objective of this task is to containerize a Flask application using Docker, deploy it on an AWS EC2 instance, expose the required ports, and ensure that the Docker container automatically starts on system reboot.
+## 📌 Task Overview
 
----
-
-## Technologies Used
-- AWS EC2 (Amazon Linux 2023)
-- Docker
-- Python (Flask)
-- GitHub
+This task demonstrates how to containerize an application using **Docker**, run it inside Docker containers on an **AWS EC2 instance**, expose required ports, and ensure the container **auto-starts on system reboot**.
 
 ---
 
-## Task Requirements
-- Create Docker file(s)
+## 🛠️ Task Requirements
+
+The following objectives were completed:
+
+- Create Dockerfile(s)
+- Build Docker image
 - Run application using Docker containers
 - Expose required ports
-- Ensure containers auto-start on reboot
+- Ensure Docker containers auto-start on reboot
 
 ---
 
-## EC2 Instance Setup
-An EC2 instance was launched in the **Asia Pacific (Mumbai)** region. The instance was accessed using SSH and prepared for Docker deployment.
+## 🖥️ Infrastructure Details
+
+- **Cloud Provider:** AWS
+- **Service:** EC2
+- **Instance Type:** t2.micro
+- **OS:** Amazon Linux 2023
+- **Region:** ap-south-1 (Mumbai)
+- **Application Type:** Python Flask App
+- **Container Platform:** Docker
+
+---
+
+## 📷 Screenshots Reference
+
+| Image | Description |
+|------|------------|
+| `t6.png` | AWS EC2 Instances running state |
+| `t7.png` | EC2 terminal setup & Docker installation |
+| `t8.png` | Docker image build process |
+| `t9.png` | Running Docker container |
+
+---
+
+## 📸 Screenshots
 
 ### EC2 Instances Overview
-![EC2 Instances Overview](t6.png)
+![EC2 Instances](t6.png)
 
-**Image Info:**  
-`t6.png` shows the AWS EC2 dashboard with running and stopped instances used during this task.
+### Docker Installation on EC2
+![Docker Installation](t7.png)
+
+### Docker Image Build
+![Docker Build](t8.png)
+
+### Docker Container Running
+![Docker Run](t9.png)
 
 ---
 
-## Docker Installation
-Docker was installed and enabled on the EC2 instance using Amazon Linux 2023 package manager.
+## 📦 Dockerfile
 
-```bash
-sudo yum update -y
-sudo yum install docker -y
-sudo systemctl start docker
-sudo systemctl enable docker
+The Dockerfile was created to containerize a Flask application:
+
+```dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY app.py .
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
