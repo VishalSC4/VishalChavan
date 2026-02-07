@@ -23,7 +23,7 @@ The objective of this task is to launch a cost-optimized EC2 instance, install D
 ## Step 1: Launch EC2 Instance
 An EC2 instance was launched from the AWS Management Console using Amazon Linux 2023 AMI and t2.micro instance type.
 
-![EC2 Instances Running](./Task-3/t6.png)
+![EC2 Instances Running](./t6.png)
 
 ---
 
