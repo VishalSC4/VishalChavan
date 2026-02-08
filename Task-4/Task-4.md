@@ -1,46 +1,46 @@
-# AWS EC2 Deployment – Application Access
+# Task-4 – Application Access
 
 ## Task Overview
 
-This task demonstrates how to access a deployed application on AWS EC2 using different methods:
+This task shows how a web application deployed on AWS EC2 can be accessed using:
 - Elastic IP
 - EC2 Public IP
-- Custom Domain via GoDaddy (vishal4u.shop)
+- Custom domain using GoDaddy (vishal4u.shop)
 
 ---
 
-## Task Requirements
+## Task Objectives
 
-The following objectives were completed:
+The following tasks were completed successfully:
 
-- Associate Elastic IP with EC2 instance
-- Access application via EC2 Public IP
-- Configure DNS records in GoDaddy
-- Access application via custom domain (vishal4u.shop)
+- Elastic IP was associated with the EC2 instance
+- Application was accessed using EC2 Public IP
+- DNS records were configured in GoDaddy
+- Application was accessed using custom domain vishal4u.shop
 
 ---
 
 ## Infrastructure Details
 
-- Cloud Provider: AWS
-- Service: EC2
-- Instance Type: t2.micro
-- OS: Amazon Linux 2023
-- Region: ap-south-1 (Mumbai)
-- Application Type: Web Application (Flask / NGINX / Apache)
-- Domain Provider: GoDaddy
+- **Cloud Provider:** AWS
+- **Service:** EC2
+- **Instance Type:** t2.micro
+- **Operating System:** Amazon Linux 2023
+- **Region:** ap-south-1 (Mumbai)
+- **Application Type:** Web Application (Flask / NGINX / Apache)
+- **Domain Provider:** GoDaddy
 
 ---
 
-## Screenshots Reference
+## Screenshots Description
 
 | Image   | Description |
-|---------|-------------|
-| `t10.png` | AWS EC2 Instances dashboard showing running/stopped states |
-| `t11.png` | EC2 terminal setup and NGINX installation |
-| `t12.png` | NGINX configuration and service management |
-| `t13.png` | GoDaddy DNS records pointing domain to EC2 Elastic IP |
-| `t14.png` | Browser output confirming application is live via domain vishal4u.shop |
+|--------|-------------|
+| t10.png | EC2 dashboard showing running instance |
+| t11.png | EC2 terminal and NGINX installation |
+| t12.png | NGINX configuration and service running |
+| t13.png | GoDaddy DNS records mapped to Elastic IP |
+| t14.png | Application live using custom domain |
 
 ---
 
@@ -52,7 +52,7 @@ The following objectives were completed:
 ### NGINX Installation on EC2
 ![NGINX Installation](t11.png)
 
-### NGINX Configuration and Service Management
+### NGINX Configuration
 ![NGINX Config](t12.png)
 
 ### GoDaddy DNS Setup
@@ -65,20 +65,21 @@ The following objectives were completed:
 
 ## Application Access
 
-The application can be accessed via:
+The application can be accessed using:
 
-- Elastic IP: 13.127.52.128  
-- EC2 Public IP: (example) 65.1.131.134  
-- Custom Domain: [http://vishal4u.shop](http://vishal4u.shop)
+- **Elastic IP:** 13.127.52.128
+- **EC2 Public IP:** 65.1.131.134
+- **Custom Domain:** http://vishal4u.shop
 
 ---
 
 ## Result
 
-The application was successfully deployed and is accessible via:
+The application was successfully deployed on AWS EC2 and can be accessed using:
 - Elastic IP
 - EC2 Public IP
-- Custom Domain (GoDaddy)
+- Custom Domain
 
-Browser output confirms the app is live with the message:  
+The browser displays the message:
+
 **"Task-4 AWS EC2 Application – Successfully Deployed"**
