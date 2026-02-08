@@ -1,27 +1,29 @@
-# Task 3 – AWS EC2 Deployment with Docker
+# Docker Setup and Application Deployment
 
-## Task Overview
-This task shows how to deploy Docker on an AWS EC2 instance.  
-The goal was to launch a cost‑optimized EC2 instance, install Docker, and run containers successfully.
+## Step 1: Create Dockerfile
+A Dockerfile was created inside the project directory. It defines the base image, copies the application files, installs dependencies, and sets the working directory. This ensures the Flask application can be containerized consistently.
 
-## Requirements
-- Launch EC2 instance (t2.micro)  
-- Install Docker on EC2  
-- Run Docker containers  
+Image: t1.png  
+This image shows the EC2 instance setup and monitoring details before Docker installation. It confirms the environment where Docker will be deployed.
 
-## AWS Region and Instance Details
-- Region: Asia Pacific (Mumbai) – ap-south-1  
-- Instance Type: t2.micro  
-- Operating System: Amazon Linux 2023  
+---
 
-## Step 1: Launch EC2 Instance
-An EC2 instance was launched from the AWS Management Console using Amazon Linux 2023 AMI and t2.micro instance type.
+## Step 2: Install and Configure Docker
+Docker was installed on the Amazon Linux 2023 instance. The installation was verified with the `docker --version` command. A directory named docker-demo was created, and files such as app.py, requirements.txt, and Dockerfile were added.
 
-![EC2 Instances Running](./t6.png)
+Image: t2.png  
+This image shows the terminal output during Docker installation and the creation of the project files.
 
-## Step 2: Connect to EC2 and Update System
-The instance was accessed using SSH, and system packages were updated.
+---
 
-```bash
-ssh -i Vishal.pem ec2-user@<Public-IP>
-sudo yum update -y
+## Step 3: Build Docker Image
+The Docker image was built using the command `docker build -t flask-demo-app .`. The build process pulled the Python 3.9 slim image, copied the application files, and installed dependencies. The resulting image was tagged as flask-demo-app.
+
+Image: t3.png  
+This image shows the Docker build process and the successful creation of the flask-demo-app image.
+
+---
+
+## Step 4: Run Application in Docker Container
+The container was started with the command:
+
