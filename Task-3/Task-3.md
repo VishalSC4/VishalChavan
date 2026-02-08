@@ -67,7 +67,7 @@ The following objectives were completed:
 
 The Dockerfile used to containerize the Flask application:
 
-dockerfile
+```dockerfile
 FROM python:3.9-slim
 
 WORKDIR /app
