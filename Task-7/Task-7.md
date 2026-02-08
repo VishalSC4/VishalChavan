@@ -1,40 +1,40 @@
-# AWS EC2 Deployment – Troubleshooting 🛠️
+# Task-7 – Troubleshooting
 
-## 📌 Task Overview
+## Task Overview
 
-This task focuses on identifying and resolving common issues encountered during application deployment on **AWS EC2** with **Docker** and **Load Balancer (ALB)**.  
-The goal is to ensure applications remain accessible, containers are properly exposed, and ALB health checks succeed.
+This task is about finding and fixing common problems that come up when deploying applications on AWS EC2 with Docker and a Load Balancer (ALB).  
+The aim was to make sure the app stays reachable, containers are exposed correctly, and the ALB health checks work.
 
----
-
-## 🛠️ Troubleshooting Scenarios
+## Troubleshooting Scenarios
 
 ### 1. Application Not Accessible
-**Issue:**
-- Application is deployed but not accessible via browser or public IP.
 
-**Possible Causes:**
-- Security Group not allowing inbound traffic on required ports (e.g., 80/443).
-- Application not bound to the correct host (`0.0.0.0` instead of `localhost`).
-- Firewall rules blocking traffic.
+**Issue:**  
+- The app is deployed but cannot be opened in the browser or through the public IP.
 
-**Resolution:**
-- Update EC2 Security Group to allow inbound traffic on HTTP (80) and HTTPS (443).
-- Ensure Flask/NGINX/Apache is configured to listen on `0.0.0.0`.
-- Verify instance health and restart services if needed.
+**Possible Causes:**  
+- Security Group does not allow incoming traffic on ports 80/443.  
+- The app is bound to `localhost` instead of `0.0.0.0`.  
+- Firewall rules are blocking traffic.
+
+**Fix:**  
+- Update the EC2 Security Group to allow HTTP (80) and HTTPS (443).  
+- Configure Flask/NGINX/Apache to listen on `0.0.0.0`.  
+- Check the instance health and restart the service if needed.
 
 ---
 
 ### 2. Container Running but Port Not Reachable
-**Issue:**
-- Docker container is running, but application port is not accessible externally.
 
-**Possible Causes:**
-- Port mapping not configured correctly (`-p 80:5000` missing or incorrect).
-- Application inside container not listening on the exposed port.
-- EC2 firewall/security group not allowing traffic.
+**Issue:**  
+- The Docker container is running, but the app port cannot be reached from outside.
 
-**Resolution:**
-- Run container with proper port mapping:
+**Possible Causes:**  
+- Port mapping is missing or wrong (for example, `-p 80:5000` not set).  
+- The app inside the container is not listening on the exposed port.  
+- Security Group/firewall not allowing traffic.
+
+**Fix:**  
+- Run the container with correct port mapping:  
   ```bash
   docker run -d -p 80:5000 ec2-flask-app
