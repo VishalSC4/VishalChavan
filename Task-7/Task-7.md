@@ -2,18 +2,18 @@
 
 ## Task Overview
 
-This task is about finding and fixing common problems that come up when deploying applications on AWS EC2 with Docker and a Load Balancer (ALB).  
-The aim was to make sure the app stays reachable, containers are exposed correctly, and the ALB health checks work.
+This task is about finding and fixing common problems when deploying applications on AWS EC2 with Docker and a Load Balancer (ALB).  
+The goal was to make sure the app is reachable, containers are set up correctly, and ALB health checks pass.
 
 ## Troubleshooting Scenarios
 
 ### 1. Application Not Accessible
 
 **Issue:**  
-- The app is deployed but cannot be opened in the browser or through the public IP.
+- The app is deployed but cannot be opened in the browser or with the public IP.
 
 **Possible Causes:**  
-- Security Group does not allow incoming traffic on ports 80/443.  
+- Security Group does not allow traffic on ports 80/443.  
 - The app is bound to `localhost` instead of `0.0.0.0`.  
 - Firewall rules are blocking traffic.
 
@@ -32,7 +32,7 @@ The aim was to make sure the app stays reachable, containers are exposed correct
 **Possible Causes:**  
 - Port mapping is missing or wrong (for example, `-p 80:5000` not set).  
 - The app inside the container is not listening on the exposed port.  
-- Security Group/firewall not allowing traffic.
+- Security Group or firewall not allowing traffic.
 
 **Fix:**  
 - Run the container with correct port mapping:  
