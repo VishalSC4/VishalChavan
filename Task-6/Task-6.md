@@ -2,52 +2,63 @@
 
 ## Task Overview
 
-This task focuses on optimizing costs while deploying applications on AWS EC2.  
-The goal was to use free-tier eligible instances, allocate minimal resources, and configure Auto Scaling to avoid over-provisioning.
+This task focuses on reducing cost while deploying applications on AWS EC2.  
+The main goal was to use free-tier instances, keep resource usage low, and use Auto Scaling so that extra instances are created only when needed.
+
+---
 
 ## Requirements Completed
 
-- Used free-tier eligible instances (t2.micro / t3.micro)
-- Allocated minimal resources for deployment
-- Configured Auto Scaling to dynamically adjust capacity
-- Ensured scaling policies prevent unnecessary costs
+The following steps were completed successfully:
+
+- Used free-tier eligible EC2 instances (t2.micro / t3.micro)
+- Allocated minimum resources for application deployment
+- Configured Auto Scaling to adjust capacity automatically
+- Applied scaling rules to avoid unnecessary cost
+
+---
 
 ## Infrastructure Details
 
-- Cloud Provider: AWS
-- Services: EC2, Auto Scaling
-- Instance Type: t2.micro (Free-tier eligible)
-- Operating System: Amazon Linux 2023
-- Region: ap-south-1 (Mumbai)
-- Scaling Metric: CPU Utilization
-- Auto Scaling Group (ASG): Configured to scale between 1–3 instances
+- **Cloud Provider:** AWS
+- **Services Used:** EC2, Auto Scaling
+- **Instance Type:** t2.micro (Free-tier eligible)
+- **Operating System:** Amazon Linux 2023
+- **Region:** ap-south-1 (Mumbai)
+- **Scaling Metric:** CPU Utilization
+- **Auto Scaling Group:** Minimum 1 and Maximum 3 instances
+
+---
 
 ## Cost Optimization Strategy
 
-1. Free-Tier Eligible Instances  
-   - Selected t2.micro instances which are free-tier eligible.  
-   - This helps keep the baseline cost minimal.
+### 1. Free-Tier Eligible Instances
+- t2.micro instances were selected as they are free-tier eligible.
+- This helps keep the overall cost very low.
 
-2. Minimal Resources  
-   - Deployed lightweight applications (Flask/NGINX).  
-   - Optimized Docker containers to reduce memory and CPU usage.
+### 2. Minimal Resource Usage
+- Lightweight applications like Flask and NGINX were used.
+- Applications were optimized to use less CPU and memory.
 
-3. Auto Scaling  
-   - Configured ASG with:  
-     - Minimum Instances: 1  
-     - Desired Capacity: 1  
-     - Maximum Instances: 3  
-   - Scaling policy based on CPU utilization:  
-     - Scale out when CPU > 70%  
-     - Scale in when CPU < 30%  
+### 3. Auto Scaling Configuration
+- Auto Scaling Group was configured with:
+  - Minimum Instances: 1
+  - Desired Capacity: 1
+  - Maximum Instances: 3
+- Scaling policy based on CPU usage:
+  - Scale out when CPU is above 70%
+  - Scale in when CPU is below 30%
 
-4. Avoid Over-Provisioning  
-   - Ensured resources scale only when required.  
-   - Prevents idle instances and reduces unnecessary costs.
+### 4. Avoid Over-Provisioning
+- Instances are launched only when required.
+- Idle instances are terminated automatically.
+- This avoids paying for unused resources.
+
+---
 
 ## Result
 
-- Application deployed successfully on AWS EC2 with cost-optimized configuration.  
-- Free-tier eligible instances were used to minimize expenses.  
-- Auto Scaling ensures efficient resource usage and avoids over-provisioning.  
-- Deployment is scalable, reliable, and cost-effective.
+- Application was successfully deployed with a cost-optimized setup.
+- Free-tier eligible instances helped reduce expenses.
+- Auto Scaling ensured efficient use of resources.
+- The setup is scalable, reliable, and cost-effective.
