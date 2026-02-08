@@ -36,30 +36,26 @@ The following objectives were completed:
 
 | Image   | Description |
 |---------|-------------|
-| `t1.png` | AWS EC2 Instances dashboard showing running/stopped states |
-| `t2.png` | EC2 terminal setup & Docker installation |
-| `t3.png` | Docker image build process for Flask app |
-| `t4.png` | Running Docker container details |
-| `t5.png` | Flask app output in browser |
+| `t6.png` | AWS EC2 Instances dashboard showing running/stopped states |
+| `t7.png` | EC2 terminal setup & Docker installation |
+| `t8.png` | Docker image build process for Flask app |
+| `t9.png` | Running Docker container & Flask app output in browser |
 
 ---
 
 ## Screenshots
 
 ### EC2 Instances Dashboard
-![EC2 Instances](t1.png)
+![EC2 Instances](t6.png)
 
 ### Docker Installation on EC2
-![Docker Installation](t2.png)
+![Docker Installation](t7.png)
 
 ### Docker Image Build
-![Docker Build](t3.png)
+![Docker Build](t8.png)
 
-### Docker Container Running
-![Docker Run](t4.png)
-
-### Flask Application Output
-![Flask Output](t5.png)
+### Docker Container Running & Flask Output
+![Docker Run](t9.png)
 
 ---
 
