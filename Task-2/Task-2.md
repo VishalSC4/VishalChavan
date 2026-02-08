@@ -27,3 +27,25 @@ This image shows the Docker build process and the successful creation of the fla
 ## Step 4: Run Application in Docker Container
 The container was started with the command:
 
+
+This maps port 80 on the host to port 5000 inside the container and ensures the container restarts automatically on reboot.
+
+![Running Container](t4.png)  
+This image shows the running container details, including port mapping and container ID.
+
+---
+
+## Step 5: Verify Application
+The application was accessed via the public IP of the EC2 instance. The browser confirmed that the Flask app was running successfully with the message “Task 2 is Working.”
+
+![Application Verification](t5.png)  
+This image shows the browser output verifying that the application is live and accessible.
+
+---
+
+# Summary
+- Dockerfile created for Flask app  
+- Docker installed and verified  
+- Image built and tagged as flask-demo-app  
+- Container run with auto‑restart enabled  
+- Application verified via browser
