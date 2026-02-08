@@ -1,13 +1,13 @@
-# AWS EC2 Deployment 🚀
+# AWS EC2 Deployment
 
-## 📌 Task Overview
+## Task Overview
 
-This task demonstrates deploying a **Flask application** on an **AWS EC2 instance** using **Docker**.  
+This task demonstrates deploying a Flask application on an AWS EC2 instance using Docker.  
 It covers launching EC2, installing Docker, running containers, exposing ports, and verifying application output.
 
 ---
 
-## 🛠️ Task Requirements
+## Task Requirements
 
 The following objectives were completed:
 
@@ -20,50 +20,54 @@ The following objectives were completed:
 
 ---
 
-## 🖥️ Infrastructure Details
+## Infrastructure Details
 
-- **Cloud Provider:** AWS
-- **Service:** EC2
-- **Instance Type:** t2.micro
-- **OS:** Amazon Linux 2023
-- **Region:** ap-south-1 (Mumbai)
-- **Application Type:** Python Flask App
-- **Container Platform:** Docker
+- Cloud Provider: AWS
+- Service: EC2
+- Instance Type: t2.micro
+- OS: Amazon Linux 2023
+- Region: ap-south-1 (Mumbai)
+- Application Type: Python Flask App
+- Container Platform: Docker
 
 ---
 
-## 📷 Screenshots Reference
+## Screenshots Reference
 
 | Image   | Description |
 |---------|-------------|
-| `t6.png` | AWS EC2 Instances dashboard showing running/stopped states |
-| `t7.png` | EC2 terminal setup & Docker installation |
-| `t8.png` | Docker image build process for Flask app |
-| `t9.png` | Running Docker container & Flask app output in browser |
+| `t1.png` | AWS EC2 Instances dashboard showing running/stopped states |
+| `t2.png` | EC2 terminal setup & Docker installation |
+| `t3.png` | Docker image build process for Flask app |
+| `t4.png` | Running Docker container details |
+| `t5.png` | Flask app output in browser |
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### EC2 Instances Dashboard
-![EC2 Instances](t6.png)
+![EC2 Instances](t1.png)
 
 ### Docker Installation on EC2
-![Docker Installation](t7.png)
+![Docker Installation](t2.png)
 
 ### Docker Image Build
-![Docker Build](t8.png)
+![Docker Build](t3.png)
 
-### Docker Container Running & Flask Output
-![Docker Run](t9.png)
+### Docker Container Running
+![Docker Run](t4.png)
+
+### Flask Application Output
+![Flask Output](t5.png)
 
 ---
 
-## 📦 Dockerfile
+## Dockerfile
 
 The Dockerfile used to containerize the Flask application:
 
-```dockerfile
+dockerfile
 FROM python:3.9-slim
 
 WORKDIR /app
