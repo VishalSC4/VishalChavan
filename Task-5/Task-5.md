@@ -1,51 +1,41 @@
-# AWS EC2 Deployment – Load Balancer & Auto Scaling ⚖️
+# Task -5 Load Balancer and Auto Scaling
 
-## 📌 Task Overview
+## Task Overview
 
-This task demonstrates how to configure an **Application Load Balancer (ALB)**, attach an **Auto Scaling Group (ASG)**, and scale EC2 instances automatically based on **CPU utilization**.
+This task demonstrates how to configure an Application Load Balancer (ALB), attach an Auto Scaling Group (ASG), and scale EC2 instances automatically based on CPU utilization.
 
----
+## Requirements Completed
 
-## 🛠️ Task Requirements
+- Configured Application Load Balancer (ALB)
+- Attached Auto Scaling Group (ASG)
+- Defined scaling policies based on CPU utilization
+- Verified scaling and load balancing functionality
 
-The following objectives were completed:
+## Infrastructure Details
 
-- Configure **Application Load Balancer (ALB)**
-- Attach **Auto Scaling Group (ASG)**
-- Define scaling policies based on **CPU utilization**
-- Verify scaling and load balancing functionality
+- Cloud Provider: AWS
+- Services: EC2, ALB, Auto Scaling
+- Instance Type: t2.micro
+- Operating System: Amazon Linux 2023
+- Region: ap-south-1 (Mumbai)
+- Scaling Metric: CPU Utilization
+- Load Balancer Type: Application Load Balancer (ALB)
 
----
-
-## 🖥️ Infrastructure Details
-
-- **Cloud Provider:** AWS
-- **Service:** EC2, ALB, Auto Scaling
-- **Instance Type:** t2.micro
-- **OS:** Amazon Linux 2023
-- **Region:** ap-south-1 (Mumbai)
-- **Scaling Metric:** CPU Utilization
-- **Load Balancer Type:** Application Load Balancer (ALB)
-
----
-
-## 📷 Screenshots Reference
+## Screenshots Reference
 
 | Image   | Description |
 |---------|-------------|
-| `t15.png` | EC2 Instances dashboard showing Task-5 running |
-| `t16.png` | Creating AMI from Task-5 instance |
-| `t17.png` | Registering EC2 instances to Target Group |
-| `t18.png` | Auto Scaling Group (ASG) configuration |
-| `t19.png` | Launch Template for Auto Scaling |
-| `t20.png` | Application Load Balancer (ALB) configuration |
-| `t21.png` | NGINX installation and configuration logs |
-| `t22.png` | Target Group details linked to ALB |
-| `t23.png` | Browser output confirming Task-5 application is live via ALB |
+| t15.png | EC2 Instances dashboard showing Task-5 running |
+| t16.png | Creating AMI from Task-5 instance |
+| t17.png | Registering EC2 instances to Target Group |
+| t18.png | Auto Scaling Group configuration |
+| t19.png | Launch Template for Auto Scaling |
+| t20.png | Application Load Balancer configuration |
+| t21.png | NGINX installation and configuration logs |
+| t22.png | Target Group details linked to ALB |
+| t23.png | Browser output confirming Task-5 application is live via ALB |
 
----
-
-## 📸 Screenshots
+## Screenshots
 
 ### EC2 Instances Dashboard
 ![EC2 Instances](t15.png)
@@ -65,7 +55,7 @@ The following objectives were completed:
 ### Application Load Balancer Configuration
 ![ALB Config](t20.png)
 
-### NGINX Installation & Configuration
+### NGINX Installation and Configuration
 ![NGINX Setup](t21.png)
 
 ### Target Group Details
@@ -74,25 +64,21 @@ The following objectives were completed:
 ### Application Live via ALB
 ![Application Live](t23.png)
 
----
+## Scaling Policy
 
-## ⚙️ Scaling Policy
+- Metric: CPU Utilization
+- Threshold: Scale out when CPU > 70%
+- Desired Capacity: 1
+- Minimum Instances: 1
+- Maximum Instances: 3
+- Scaling Action: Launch new EC2 instances using Launch Template when threshold is breached
 
-- **Metric:** CPU Utilization
-- **Threshold:** Scale out when CPU > 70%
-- **Desired Capacity:** 1
-- **Minimum Instances:** 1
-- **Maximum Instances:** 3
-- **Scaling Action:** Launch new EC2 instances using Launch Template when threshold is breached
-
----
-
-## ✅ Result
+## Result
 
 The application was successfully deployed with:
-- **Application Load Balancer (ALB)** distributing traffic
-- **Auto Scaling Group (ASG)** managing EC2 instances
-- **Scaling policy based on CPU utilization**
+- Application Load Balancer distributing traffic
+- Auto Scaling Group managing EC2 instances
+- Scaling policy based on CPU utilization
 
-Browser output confirms the app is live with the message:  
-**"This Is Task-5"**
+Browser output confirmed the application is live with the message:  
+"This Is Task-5"
